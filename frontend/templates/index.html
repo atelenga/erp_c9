@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Главная страница</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/static/jquery/css/smoothness/jquery-ui-1.8.21.custom.css" media="all" />
+	    <script src="/static/jquery/js/jquery-1.7.2.min.js"></script>
+	    <script src="/static/jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+	    <script src="/static/jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>	
+	    <script type="text/javascript">
+	    $(function() {	        
+            $('#id_date').datepicker({dateFormat: 'dd.mm.yy'});
+        });
+	</script>	
+    </head>
+    <body>
+        <a href="/"><img src="/static/logo.png" alt="Модус-Краснодар" /></a>
+	    <h1>Система расчёта оборотных средств ООО "Модус-Краснодар"</h1>
+	    <p>Ввод данных</p>
+	    <table>
+	        <thead></thead>
+	        <tbody>
+	            <tr>
+	                <th><a href="/codebom/">Коды BOM</a></th>
+	                <th>&nbsp;|&nbsp;</th> 
+	                <th><a href="/supplier/">Поставщики</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/supplierproduct/">Продукция</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/complectations/">Комплектации</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/remains/">Запасы</a></th>
+	                <th>&nbsp;|&nbsp;</th>	                
+	                <th><a href="/admin/">Админ</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	            </tr>
+	       </tbody>
+	    </table>
+	    <br />
+	    <p>Планирование</p>
+	    <table>
+	        <thead></thead>
+	        <tbody>
+	            <tr>
+	                <th><a href="/productionplan/">Производственный план</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/orders/">Заказы деталей</a></th>
+	                <th>&nbsp;|&nbsp;</th>	                
+	            </tr>
+	       </tbody>
+	    </table>
+	    <br />
+	    <p>Вывод данных</p>
+	    <table>
+	        <thead></thead>
+	        <tbody>
+	            <tr>
+	                <th><a href="/diagrambom/">Диаграмма BOM</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/supplierlist/">Список поставщиков</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/remainslist/">Список запасов</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/supplierproductlist/">Список продукции</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/complectationslist/">Список комплектаций</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/productionplanlist/">План производства</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	                <th><a href="/orderslist/">Список заказов деталей</a></th>
+	                <th>&nbsp;|&nbsp;</th>
+	            </tr>
+	       </tbody>
+        </table>
+        </br>
+        <p>Расчет показателей для запасов</p>	    
+        </table>
+        <table>
+	    <thead>
+		    <tr>
+				<th><b></b></th>
+			    <th><b>Код заказа</b></th>
+			    <th><b>Комплектация</b></th>
+			    <th><b>Количество</b></th>
+			    <th><b>Дата поступления заказа</b></th>
+			    <th><b>Дата исполнения заказа</b></th>
+		    </tr>
+	    </thead>	
+	    
+	    {% for productionplan in productionplans %}	
+	    
+	    <tbody>
+	    <tr>
+		    <td><a href = "/selectproduct/{{productionplan.code}}">Выбрать</a></td>
+		    <td>{{ productionplan.code }}</td>
+		    <td>{{ productionplan.complectation }}</td>
+		    <td>{{ productionplan.amount }}</td>
+		    <td>{{ productionplan.start_date }}</td>
+		    <td>{{ productionplan.end_date }}</td>
+	    </tr>
+    	{% endfor %}
+	    </tbody>
+	    </table>
+    </body>
+</html>

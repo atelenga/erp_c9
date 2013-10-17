@@ -1,0 +1,102 @@
+body{
+		font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+		font-size:12px;
+		}
+		p, h1, form, button{border:0; margin:0; padding:0;}
+		.spacer{clear:both; height:1px;}
+		/* ----------- My Form ----------- */
+		.myform{
+		margin:0;
+		width:400px;
+		padding:14px;
+		}
+		
+
+		table
+		{
+			font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+			font-size: 12px;
+			background: #fff;						
+			border-collapse: collapse;
+			text-align: left;
+		}
+		
+		th
+		{
+			font-size: 12px;
+			font-weight: normal;
+			color: #039;
+			padding: 10px 8px;
+			border-bottom: 2px solid #6678b1;
+		}
+		
+		tr:nth-child(odd) 
+		{
+			background-color: #ebf4fb;
+		}
+		
+		td
+		{
+			color: #669;
+			padding: 9px 8px 0px 8px;
+		}
+		 
+		tbody tr:hover td
+		{
+			color: #009;
+		}				
+		
+
+		/* ----------- stylized ----------- */
+		#stylized{
+		border:solid 2px #b7ddf2;
+		background:#ebf4fb;
+		}
+		#stylized h1 {
+		font-size:12px;
+		font-weight:bold;
+		margin-bottom:8px;
+		}		
+		#stylized label{
+		display:block;
+		font-weight:bold;
+		text-align:right;
+		width:140px;
+		float:left;
+		}
+		#stylized .small{
+		color:#666666;
+		display:block;
+		font-size:9px;
+		font-weight:normal;
+		text-align:right;
+		width:140px;
+		}
+		#stylized input{
+		float:left;
+		font-size:12px;
+		padding:4px 2px;
+		border:solid 1px #aacfe4;
+		width:200px;
+		margin:2px 0 20px 10px;
+		}
+		#stylized select{
+		float:left;
+		font-size:12px;
+		padding:4px 2px;
+		border:solid 1px #aacfe4;
+		width:205px;
+		margin:2px 0 20px 10px;
+		}
+		#stylized button{
+		clear:both;
+		margin-left:150px;
+		width:125px;
+		height:31px;
+		background:#666666;
+		text-align:center;
+		line-height:31px;
+		color:#FFFFFF;
+		font-size:11px;
+		font-weight:bold;		
+		}		

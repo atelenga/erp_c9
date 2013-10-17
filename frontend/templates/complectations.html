@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Комплектация</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/static/jquery/css/smoothness/jquery-ui-1.8.21.custom.css" media="all" />
+	    <script src="/static/jquery/js/jquery-1.7.2.min.js"></script>
+	    <script src="/static/jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+	    <script src="/static/jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>	
+	    <script type="text/javascript">
+        $(function() {	        
+            $('#id_date').datepicker({dateFormat: 'dd.mm.yy'});   
+        });
+	</script>	
+    </head>
+    <body>
+        <a href="/"><img src="/static/logo.png" alt="Модус-Краснодар" /></a>
+	    <h1>Система расчёта оборотных средств ООО "Модус-Краснодар"</h1>
+        <div id="stylized" class="myform">
+        <form id="form" name="form" method="post">
+		    {% csrf_token %}		
+		    {{ form.as_p }}
+		<button type="submit">Сохранить в базу</button>
+		<div class="spacer"></div>	
+		<button type="reset">Очистить форму</button>
+		<div class="spacer"></div>
+	</form>	
+	<a href="/">На главную</a>
+    </body>
+</html>

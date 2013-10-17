@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Список комплектаций</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/static/jquery/css/smoothness/jquery-ui-1.8.21.custom.css" media="all" />
+	    <script src="/static/jquery/js/jquery-1.7.2.min.js"></script>
+	    <script src="/static/jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+	    <script src="/static/jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>	
+	    <script type="text/javascript">
+        $(function() {	        
+            $('#id_date').datepicker({dateFormat: 'dd.mm.yy'});   
+        });
+	</script>	
+    </head>
+    <body>
+        <a href="/"><img src="/static/logo.png" alt="Модус-Краснодар" /></a>
+	    <h1>Система расчёта оборотных средств ООО "Модус-Краснодар"</h1>
+        <b>Список комплектаций</b>	
+	
+    	<table>
+	    <thead>
+		    <tr>
+			    <th><b>Код</b></th>
+			    <th><b>Название</b></th>
+			    <th><b>Тип кузова</b></th>
+			    <th><b>Цвет кузова</b></th>
+			    <th><b>Объём двигателя</b></th>
+			    <th><b>Тип трансмиссии</b></th>
+			    <th><b>Тип горючего</b></th>
+			    <th><b>Шины</b></th>
+			    <th><b>Диски</b></th>
+			    <th><b>Отделка</b></th>
+		    </tr>
+	    </thead>	
+	    
+	    {% for complectation in complectations %}	
+	    
+	    <tbody>
+	    <tr>
+		    <td>{{ complectation.code }}</td>
+		    <td>{{ complectation.name }}</td>
+		    <td>{{ complectation.body_type }}</td>
+		    <td>{{ complectation.body_colour }}</td>
+		    <td>{{ complectation.engine_volume }}</td>
+		    <td>{{ complectation.transmission }}</td>
+		    <td>{{ complectation.fuel_type }}</td>
+		    <td>{{ complectation.tires }}</td>
+		    <td>{{ complectation.wheels }}</td>
+		    <td>{{ complectation.interior }}</td>
+	    </tr>
+    	{% endfor %}
+	    </tbody>
+	    
+	    </table>
+	<a href="/">На главную</a>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Выберите план производства</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/static/jquery/css/smoothness/jquery-ui-1.8.21.custom.css" media="all" />
+	    <script src="/static/jquery/js/jquery-1.7.2.min.js"></script>
+	    <script src="/static/jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+	    <script src="/static/jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>	
+	    <script type="text/javascript">
+        	$(function() {	        
+            $('#id_date').datepicker({dateFormat: 'dd.mm.yy'});   
+        });
+		</script>	
+    </head>
+    <body>
+        <a href="/"><img src="/static/logo.png" alt="Модус-Краснодар" /></a>
+	    <h1>Система расчёта оборотных средств ООО "Модус-Краснодар"</h1>
+        <b>Расчёты показателей для выбранного плана производства</b>
+        <p>{{ productionplan.code }} {{ productionplan.complectation }} {{ productionplan.amount }} {{productionplan.start_date }} {{ productionplan.end_date }}</p>
+
+        </br>
+        <p>Расчет показателей для запасов</p>
+		<table>
+	    <thead>
+		    <tr>				
+			    <th><b>LIFO</b></th>
+			    <th><b>FIFO</b></th>
+			    <th><b>Среднее значение</b></th>
+		    </tr>
+	    </thead>	
+	    
+	    <tbody>
+	    <tr>		    
+		    <td>{{ r_lifo }}</td>
+		    <td>{{ r_fifo }}</td>
+		    <td>{{ r_average }}</td>
+		</tr>    	
+	    </tbody>	    
+		</table>
+		        </br>
+        <p>Расчет показателей для заказов деталей</p>
+		<table>
+	    <thead>
+		    <tr>				
+			    <th><b>LIFO</b></th>
+			    <th><b>FIFO</b></th>
+			    <th><b>Среднее значение</b></th>
+		    </tr>
+	    </thead>	
+	    
+	    <tbody>
+	    <tr>		    
+		    <td>{{ o_lifo }}</td>
+		    <td>{{ o_fifo }}</td>
+		    <td>{{ o_average }}</td>
+		</tr>    	
+	    </tbody>	    
+		</table>
+		</br>
+	<a href="/">На главную</a>
+    </body>
+</html>
